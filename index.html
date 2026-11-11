@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <img src="assets/imagem/Logo SENAI.png" alt="Logo-SENAI">
+        <h1>Cadastro SENAI</h1>
+        <nav>
+            <a href="#formulario">Cadastro</a>
+            <a href="#tabela">Turma</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="formulario">
+            <h2>Cadastro</h2>
+            <form>
+                <div id="fnome" class="info">
+                    <label for="name">Nome Completo</label>
+                    <input id="name" type="text" placeholder="Digite seu nome...">
+                </div>
+                <div id="fdata-nascimento" class="info">
+                    <label for="data">Data de Nascimento</label>
+                    <input id="data" type="date" placeholder="Insira sua data de nascimento...">
+                </div>
+                <div id="fcargo" class="info">
+                    <label for="cargo-senai">Selecione seu Cargo</label>
+                    <select name="Cargo" id="cargo-senai">
+                        <option value=""disable selected>Selecione uma Opção</option>
+                        <option value="instru">Instrutor</option>
+                        <option value="aln">Aluno</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div id="fturma" class="info">
+                    <label for="turma-setor">Turma/Setor</label>
+                    <input id="turma-setor" type="text" placeholder="Digite sua Turma ou Setor...">
+
+                </div>
+                <div id="fcep" class="info">
+                    <label for="cep">CEP</label>
+                    <input id="cep" type="text" placeholder="Insira seu CEP...">
+                </div>
+                
+                <div id="frua" class="info">
+                    <h3>Rua</h3>
+                    <p>Sua Rua</p>
+                </div>
+
+                <div id="fnumero" class="info">
+                    <label for="numero">Número</label>
+                    <input id="numero" type="number" placeholder="Digite seu Número...">
+                </div>
+
+                <div id="fcomplemento" class="info">
+                    <label for="comple">Complemento</label>
+                    <input id="comple" type="text" placeholder="Digite um Complemento(opcional)">
+                </div>
+
+                <div id="fbairro" class="info">
+                    <h3>Bairro</h3>
+                    <p>Seu Bairro</p>
+                </div>
+
+                <div id="fcidade" class="info">
+                    <h3>Cidade</h3>
+                    <p>Sua Cidade</p>
+                </div>
+
+                <div id="festado" class="info">
+                    <h3>Estado</h3>
+                    <p>Seu Estado</p>
+                </div>
+                <div id="btn">
+                    <button type="button">Submeter</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="tabela">
+            <div>
+                <h2>Turma</h2>
+                <div id="numeroint">
+                    <p>Número de Integrantes: <span>0</span></p>
+                </div>
+
+                <div>
+                    <table class="tabela-final">
+                        <caption>Integrantes</caption>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Cargo</th>
+                                <th>Data de Nascimento</th>
+                                <th>Turma/Setor</th>
+                                <th>CEP</th>
+                                <th>Rua</th>
+                                <th>Número</th>
+                                <th>Complemento</th>
+                                <th>Bairro</th>
+                                <th>Cidade</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
