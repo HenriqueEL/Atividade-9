@@ -29,7 +29,6 @@ header{
     h1{
        align-content: center ; 
     }
-
 }
 .botoes{
     display: flex;
@@ -84,32 +83,25 @@ main{
     justify-self: center;
     padding-left: 36px;
 }
-
 .info{
     display: flex;
     flex-direction: column;
     row-gap: 8px;
 }
-
 .label{
     font-weight: 500;
     font-size: 22px;
-    
 }
-
 .input{
     width: 250px;
     border-radius: 5px;
     border: grey solid 2px;
     font-size: 15px;
     color: grey;
-
 }
-
 .input::placeholder{
     color: grey;
 }
-
 #btn{
     display: flex;
     flex-direction: column;
@@ -124,32 +116,32 @@ main{
         font-size: 16px;
         font-family: "Google";
         cursor: pointer;
-        transition: background-color 0.3s ease , tranform 0.2s ease;
-        
+        transition: background-color 0.3s ease , tranform 0.2s ease; 
     }
     button:hover{
         background-color: rgb(44, 44, 109);
         transform: scale(1.05);
-        
     }
 }
-
 #tabela{
     background-color: white;
     width: 70%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
+    row-gap: 30px;
     padding: 3%;
     border-radius: 20px;
-    h2{
+    #integ{
         font-size: 32px;
+        align-self: center;
     }
     border: grey solid 2px;
     box-shadow: 6px 6px 20px  black;
 }
-
+#numeroint{
+    display: flex;
+    flex-direction: column;
+}
 .tabela-final{
     display: flex;
     flex-direction: column;
@@ -159,8 +151,35 @@ main{
         font-weight: 600;
         font-size: 25px;
     }
-
-    
-
 }
 
+@media screen and ( max-width: 768px) {
+    header{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .logo-texto{
+        flex-direction: row;
+        height: 40px;
+        padding-left: 0;
+        h1{
+            font-size: 26px;
+        }
+    }
+    .botoes{
+        a{
+            padding-bottom: 2px;
+            padding-top: 4px;
+            width: 110px;
+        }
+    }
+    .form{
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    #numeroint{
+        display: flex;
+        flex-direction: column; 
+    }
+}
