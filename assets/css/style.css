@@ -3,7 +3,7 @@
 }
 @font-face {
     font-family: "Google";
-    src: url(../assets/fonte/Google_Sans/GoogleSans-VariableFont_GRAD\,opsz\,wght.ttf);
+    src: url(../fonte/Google_Sans/GoogleSans-VariableFont_GRAD\,opsz\,wght.ttf);
 }
 body{
     display: flex;
@@ -97,7 +97,7 @@ main{
     border-radius: 5px;
     border: grey solid 2px;
     font-size: 15px;
-    color: grey;
+    color: black;
 }
 .input::placeholder{
     color: grey;
