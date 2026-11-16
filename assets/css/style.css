@@ -102,7 +102,7 @@ main{
 .input::placeholder{
     color: grey;
 }
-#btn{
+#submt{
     display: flex;
     flex-direction: column;
     align-self: last baseline;
@@ -143,14 +143,19 @@ main{
     flex-direction: column;
 }
 .tabela-final{
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    
-     caption{
-        font-weight: 600;
-        font-size: 25px;
-    }
+    overflow-x: auto;
+}
+.table{
+    min-width: 1500px;
+    border-collapse: collapse;
+}
+.cbc-tab{
+    width: 120px;
+    background-color: #26348c;
+    color: white;
+}
+th, td{
+    border: 2px solid black;
 }
 
 @media screen and ( max-width: 768px) {
