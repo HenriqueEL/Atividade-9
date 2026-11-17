@@ -13,20 +13,6 @@ let bairro;
 let cidade;
 let estado;
 
-let user ={
-    nome: '',
-    datanasc: '',
-    cargo: '',
-    turset: '',
-    cep: '',
-    rua: '',
-    num: '',
-    comp: '',
-    bairro: '',
-    cidade: '',
-    estado: ''
-}
-
 async function envcep(){
     cep = document.getElementById('incep').value; 
 
@@ -67,21 +53,74 @@ function enviar(){
     if(nom == "" || datanasc == "" || cargo == "" || turset == "" || cep == "" || rua == "" || num == "" || bairro == "" || cidade == "" || estado == ""){
         alert("Dados inseridos inválidos");
         return;
-    } 
+    }
 
-    user.nome = nom;
-    user.datanasc = datanasc;
-    user.cargo = cargo;
-    user.turset = turset;
-    user.cep = cep;
-    user.rua = rua;
-    user.num = num;
-    user.comp = comp;
-    user.bairro = bairro;
-    user.cidade = cidade;
-    user.estado = estado;
+    let listaUsuarios = JSON.parse(localStorage.getItem('dadosUser')) || [];
 
-    localStorage.setItem('dadosUser', JSON.stringify(user));
+    let user = {
+        nome: nom,
+        datanasc: datanasc,
+        cargo: cargo,
+        turset: turset,
+        cep: cep,
+        rua: rua,
+        num: num,
+        comp: comp,
+        bairro: bairro,
+        cidade: cidade,
+        estado: estado
+    }
+
+    listaUsuarios.push(user);
+
+    localStorage.setItem('dadosUser', JSON.stringify(listaUsuarios));
 
     alert("Dados enviados com sucesso!");
+
+    listarDados();
+}
+
+function listarDados(){
+    let listaUsuarios = JSON.parse(localStorage.getItem('dadosUser')) || [];
+
+    let tblCorp = document.getElementById('corp'); 
+
+    tblCorp.innerHTML = '';
+
+    listaUsuarios.forEach((user, index) => {
+        document.getElementById('num-integ').textContent = listaUsuarios.length;
+
+        tblCorp.innerHTML += `
+        <tr class = 'linha'>
+            <td>${user.nome}
+            <td>${user.cargo}
+            <td>${user.datanasc}
+            <td>${user.turset}
+            <td>${user.cep}
+            <td>${user.rua}
+            <td>${user.num}
+            <td>${user.comp}
+            <td>${user.bairro}
+            <td>${user.cidade}
+            <td>${user.estado}
+            <td>
+                <button class = 'edit' onclick = 'editar(${index})'>Editar
+                <button class = 'excluir' onclick = 'exclua(${index})'>Excluir
+        `
+    });
+}
+
+listarDados();
+
+function exclua(index){
+    let listaUsuarios = JSON.parse(localStorage.getItem('dadosUser')) || [];
+
+    listaUsuarios.splice(index, 1);
+
+    localStorage.setItem('dadosUser', JSON.stringify(listaUsuarios));
+
+    localStorage.setItem('numInteg', listaUsuarios.length);
+    document.getElementById('num-integ').textContent = listaUsuarios.length;
+
+    listarDados();
 }
