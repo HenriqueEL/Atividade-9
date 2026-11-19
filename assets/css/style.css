@@ -94,6 +94,7 @@ main{
 }
 .input{
     width: 250px;
+    height: 22px;
     border-radius: 5px;
     border: grey solid 2px;
     font-size: 15px;
@@ -143,19 +144,43 @@ main{
     flex-direction: column;
 }
 .tabela-final{
+    width: 100%;
     overflow-x: auto;
 }
 .table{
-    min-width: 1500px;
+    width: 100%;
+    min-width: 1000px;
     border-collapse: collapse;
+    justify-items: center;
 }
 .cbc-tab{
-    width: 120px;
     background-color: #26348c;
     color: white;
 }
 th, td{
     border: 2px solid black;
+}
+td{
+    text-align: center;
+}
+.acao{
+    text-align: center;
+    background-color: #26348c;
+    width: 90px;
+    height: 32px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 12px;
+    color: white;
+    border: #26348c;
+    font-size: 16px;
+    font-family: "Google";
+    cursor: pointer;
+    transition: background-color 0.3s ease , tranform 0.2s ease;
+}
+.acao:hover{
+    background-color: rgb(44, 44, 109);
+    transform: scale(1.05);
 }
 
 @media screen and ( max-width: 768px) {
